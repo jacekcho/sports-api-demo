@@ -8,6 +8,7 @@ import spark.Response;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class SportsService {
 
@@ -35,5 +36,24 @@ public class SportsService {
         sport.setId(req.params("id"));
         return sport;
     }
+
+    public String getSportById(Request req, Response res) {
+        res.type("application/json");
+        String id = req.params("id");
+        Optional<Sports> optionalSport = findSportById(id);
+        if (optionalSport.isPresent()) {
+            return GSON.toJson(optionalSport.get());
+        } else {
+            res.status(404);
+            return GSON.toJson("No Sport with the id: " + id);
+        }
+    }
+
+    private Optional<Sports> findSportById(String id) {
+        return sports.stream()
+                .filter(sport -> sport.getId().equals(id))
+                .findFirst();
+    }
+
 
 }

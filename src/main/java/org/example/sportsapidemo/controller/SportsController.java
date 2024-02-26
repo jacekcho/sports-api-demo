@@ -17,5 +17,6 @@ public class SportsController {
         Spark.port(PropertiesManager.getSparkPort());
         Spark.get("/sports", sportsService::getSports);
         Spark.post("/sports/:id", sportsService::addSport);
+        Spark.get("/sports/:id", sportsService::getSportById);
     }
 }
