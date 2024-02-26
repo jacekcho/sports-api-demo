@@ -21,7 +21,6 @@ public class SportsService {
     }
 
     public String getSports(Request req, Response res) {
-        res.type("application/json");
         return GSON.toJson(sports);
     }
 
