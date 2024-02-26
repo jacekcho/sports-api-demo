@@ -23,14 +23,24 @@ java -jar target/sports-api-demo-0.0.1.jar
 
 ## Usage
 
-Once the application is running, you can interact with the API using HTTP requests. Here are some example requests:
+Once the application is running, you can interact with the API using HTTP requests.
 
 - **GET http://localhost:8080/sports**: Retrieve all sports.
-- **POST http://localhost:8080/sports/:id**: Add a new sport.
-- **GET http://localhost:8080/sports/:id**: Retrieve a sport by ID.
 
-Make sure to replace `:id` with the actual ID of the sport when making requests.
+- **GET http://localhost:8080/sports/{id}**: Retrieve a sport by ID.<br>
+  Make sure to replace `{id}` with the actual ID of the sport when making requests.
 
+- **POST http://localhost:8080/sports/{id}**: Add a new sport.<br>
+  Make sure to replace `{id}` with the actual ID of the sport when making requests.<br>
+  Request body:
+
+  ```yaml
+  {
+    "name": "SPORT_NAME",
+    "active": true
+  }
+  ```
+  
 ## Configuration
 
 The project uses a configuration file `config.properties` to manage application settings. You can configure properties such as the Spark port and the file path for default sports data.
