@@ -25,10 +25,15 @@ public class SportsService {
     }
 
     public Integer addSport(Request req, Response res) {
+        sports.add(setSport(req));
+        return res.status();
+    }
+
+    private Sports setSport(Request req) {
         String requestBody = req.body();
         Sports sport = GSON.fromJson(requestBody, Sports.class);
-        sports.add(sport);
-        return res.status();
+        sport.setId(req.params("id"));
+        return sport;
     }
 
 }

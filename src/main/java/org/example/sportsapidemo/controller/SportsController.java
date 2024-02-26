@@ -16,6 +16,6 @@ public class SportsController {
     private void setupRoutes() {
         Spark.port(PropertiesManager.getSparkPort());
         Spark.get("/sports", sportsService::getSports);
-        Spark.post("/sports", sportsService::addSport);
+        Spark.post("/sports/:id", sportsService::addSport);
     }
 }
