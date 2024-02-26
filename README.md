@@ -25,9 +25,9 @@ java -jar target/sports-api-demo-0.0.1.jar
 
 Once the application is running, you can interact with the API using HTTP requests. Here are some example requests:
 
-- **GET /sports**: Retrieve all sports.
-- **POST /sports/:id**: Add a new sport.
-- **GET /sports/:id**: Retrieve a sport by ID.
+- **GET http://localhost:8080/sports**: Retrieve all sports.
+- **POST http://localhost:8080/sports/:id**: Add a new sport.
+- **GET http://localhost:8080/sports/:id**: Retrieve a sport by ID.
 
 Make sure to replace `:id` with the actual ID of the sport when making requests.
 
