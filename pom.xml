@@ -13,6 +13,8 @@
         <spark-core.version>2.9.4</spark-core.version>
         <gson.version>2.10.1</gson.version>
         <lombok.version>1.18.30</lombok.version>
+        <jackson-databind.version>2.16.1</jackson-databind.version>
+        <archaius-core>0.7.11</archaius-core>
     </properties>
     <dependencies>
         <dependency>
@@ -30,6 +32,16 @@
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson-databind.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.netflix.archaius</groupId>
+            <artifactId>archaius-core</artifactId>
+            <version>${archaius-core}</version>
         </dependency>
     </dependencies>
 </project>

@@ -1,6 +1,7 @@
 package org.example.sportsapidemo.controller;
 
 import org.example.sportsapidemo.service.SportsService;
+import org.example.sportsapidemo.utils.PropertiesManager;
 import spark.Spark;
 
 public class SportsController {
@@ -13,7 +14,7 @@ public class SportsController {
     }
 
     private void setupRoutes() {
-        Spark.port(8080);
+        Spark.port(PropertiesManager.getSparkPort());
         Spark.get("/sports", sportsService::getSports);
         Spark.post("/sports", sportsService::addSport);
     }

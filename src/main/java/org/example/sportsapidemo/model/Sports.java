@@ -15,6 +15,9 @@ public class Sports {
 
     private boolean active;
 
+    private Sports() {
+    }
+
     public Sports(String id, String name, boolean active) {
         this.id = id;
         this.name = name;

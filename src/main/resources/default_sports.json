@@ -1,0 +1,52 @@
+[
+  {
+    "id": "1",
+    "name": "Fishing",
+    "active": false
+  },
+  {
+    "id": "2",
+    "name": "Football",
+    "active": true
+  },
+  {
+    "id": "3",
+    "name": "Pool",
+    "active": false
+  },
+  {
+    "id": "4",
+    "name": "Sumo",
+    "active": false
+  },
+  {
+    "id": "5",
+    "name": "Rugby League",
+    "active": true
+  },
+  {
+    "id": "6",
+    "name": "Futsal",
+    "active": true
+  },
+  {
+    "id": "7",
+    "name": "Snooker",
+    "active": true
+  },
+  {
+    "id": "8",
+    "name": "UFC",
+    "active": true
+  },
+  {
+    "id": "9",
+    "name": "Hockey",
+    "active": false
+  },
+  {
+    "id": "10",
+    "name": "Basketball",
+    "active": true
+  }
+]
