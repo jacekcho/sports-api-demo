@@ -12,10 +12,17 @@ To run the project, you can follow these steps:
 
 1. Clone the repository to your local machine.
 2. Build the project using Maven.
+
+Unix:
 ```
-cd sports-api-demo
 ./mvnw clean install
 ```
+
+Windows:
+```
+./mvnw.cmd clean install
+```
+
 3. Run the application  
 ```
 java -jar target/sports-api-demo-0.0.1.jar
@@ -34,7 +41,7 @@ Once the application is running, you can interact with the API using HTTP reques
   Make sure to replace `{id}` with the actual ID of the sport when making requests.<br>
   Request body:
 
-  ```yaml
+  ```yaml 
   {
     "name": "SPORT_NAME",
     "active": true
