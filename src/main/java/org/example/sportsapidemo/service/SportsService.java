@@ -60,6 +60,18 @@ public class SportsService {
         return res.status();
     }
 
+    public Integer removeSport(Request req, Response res) {
+        String requestSportId = req.params("id");
+        Optional<Sport> existingSport = findSportById(requestSportId);
+        if (existingSport.isPresent()) {
+            SPORTS.remove(existingSport.get());
+            res.status(200);
+        } else {
+            res.status(404);
+        }
+        return res.status();
+    }
+
     private Sport setSport(Request req) {
         Sport sport = GSON.fromJson(req.body(), Sport.class);
         sport.setId(req.params("id"));

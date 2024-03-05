@@ -25,5 +25,7 @@ public class SportsController {
         Spark.post("/sports/:id", sportsService::addSport);
 
         Spark.put("/sports/:id", sportsService::updateSport);
+
+        Spark.delete("/sports/:id", sportsService::removeSport);
     }
 }

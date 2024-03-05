@@ -67,4 +67,6 @@ Once the application is running, you can interact with the API using HTTP reques
   }
   ```
 
+- **DELETE http://localhost:8080/sports/{id}**: Remove a sport by ID.<br>
+
 Make sure to replace `{id}` with the actual ID of the sport when making requests.<br>
