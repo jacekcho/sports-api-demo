@@ -56,7 +56,3 @@ Once the application is running, you can interact with the API using HTTP reques
   ```
 
 Make sure to replace `{id}` with the actual ID of the sport when making requests.<br>
-
-## Configuration
-
-The project uses a configuration file `config.properties` to manage application settings. You can configure properties such as the Spark port and the file path for default sports data.
