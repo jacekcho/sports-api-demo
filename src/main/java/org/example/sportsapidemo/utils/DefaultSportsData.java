@@ -15,7 +15,7 @@ public class DefaultSportsData {
             String fileContent = Files.readString(Path.of(PropertiesManager.getDefaultSportsFilePath()));
             Sport[] defaultSports = new ObjectMapper().readValue(fileContent, Sport[].class);
             for (Sport sport : defaultSports) {
-                sports.add(new Sport(sport.getId(), sport.getName(), sport.isActive()));
+                sports.add(new Sport(sport.getId(), sport.getName(), sport.isActive(), sport.getCompetitions()));
             }
         } catch (IOException e) {
             throw new RuntimeException(e);

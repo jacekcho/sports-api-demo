@@ -42,7 +42,13 @@ Once the application is running, you can interact with the API using HTTP reques
   ```yaml 
   {
     "name": "SPORT_NAME",
-    "active": true
+    "active": true,
+    "competitions": [
+      {
+        "id": "COMPETITON_ID",
+        "name": "COMPETITON_NAME"
+      }
+    ]
   }
   ```
 - **PUT http://localhost:8080/sports/{id}**: Update an existing sport with the given ID.<br>
@@ -50,8 +56,14 @@ Once the application is running, you can interact with the API using HTTP reques
 
   ```yaml 
   {
-    "name": "UPDATE_SPORT",
-    "active": true
+    "name": "UPDATED_SPORT_NAME",
+    "active": false,
+    "competitions": [
+      {
+        "id": "UPDATED_COMPETITON_ID",
+        "name": "UPDATED_COMPETITON_NAME"
+      }
+    ]
   }
   ```
 
