@@ -1,8 +1,7 @@
 package org.example.sportsapidemo.service;
 
 import com.google.gson.Gson;
-import lombok.extern.slf4j.Slf4j;
-import org.example.sportsapidemo.model.Sports;
+import org.example.sportsapidemo.model.Sport;
 import org.example.sportsapidemo.utils.DefaultSportsData;
 import spark.Request;
 import spark.Response;
@@ -11,42 +10,23 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@Slf4j
 public class SportsService {
 
     private static final Gson GSON = new Gson();
 
-    private static final List<Sports> sports = new ArrayList<>();
+    private static final List<Sport> SPORTS = new ArrayList<>();
 
     public SportsService() {
-        DefaultSportsData.injectDefaultData(sports);
+        DefaultSportsData.injectDefaultData(SPORTS);
     }
 
     public String getSports(Request req, Response res) {
-        logRequest(req);
-        res.type("application/json");
-        return GSON.toJson(sports);
-    }
-
-    public Integer addSport(Request req, Response res) {
-        logRequest(req);
-        res.type("application/json");
-        sports.add(setSport(req));
-        return res.status();
-    }
-
-    private Sports setSport(Request req) {
-        String requestBody = req.body();
-        Sports sport = GSON.fromJson(requestBody, Sports.class);
-        sport.setId(req.params("id"));
-        return sport;
+        return GSON.toJson(SPORTS);
     }
 
     public String getSportById(Request req, Response res) {
-        logRequest(req);
-        res.type("application/json");
         String id = req.params("id");
-        Optional<Sports> optionalSport = findSportById(id);
+        Optional<Sport> optionalSport = findSportById(id);
         if (optionalSport.isPresent()) {
             return GSON.toJson(optionalSport.get());
         } else {
@@ -55,18 +35,35 @@ public class SportsService {
         }
     }
 
-    private Optional<Sports> findSportById(String id) {
-        return sports.stream()
-                .filter(sport -> sport.getId().equals(id))
-                .findFirst();
+    public Integer addSport(Request req, Response res) {
+        SPORTS.add(setSport(req));
+        return res.status();
     }
 
-    private void logRequest(Request req) {
-        if (req.body().isEmpty()) {
-            log.info(String.format("\nRequest method: %s\nRequest URI: %s%s", req.requestMethod(), req.host(), req.uri()));
+    public Integer updateSport(Request req, Response res) {
+        String requestSportId = req.params("id");
+        Optional<Sport> existingSport = findSportById(requestSportId);
+        if (existingSport.isPresent()) {
+            Sport sport = setSport(req);
+            existingSport.get().setName(sport.getName());
+            existingSport.get().setActive(sport.isActive());
+            res.status(200);
         } else {
-            log.info(String.format("\nRequest method: %s\nRequest URI: %s%s\nBody: %s", req.requestMethod(), req.host(), req.uri(), req.body()));
+            res.status(404);
         }
+        return res.status();
+    }
+
+    private Sport setSport(Request req) {
+        Sport sport = GSON.fromJson(req.body(), Sport.class);
+        sport.setId(req.params("id"));
+        return sport;
+    }
+
+    private Optional<Sport> findSportById(String id) {
+        return SPORTS.stream()
+                .filter(sport -> sport.getId().equals(id))
+                .findFirst();
     }
 
 }

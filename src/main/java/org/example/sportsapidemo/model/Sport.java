@@ -7,7 +7,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class Sports {
+public class Sport {
 
     private String id;
 
@@ -15,10 +15,10 @@ public class Sports {
 
     private boolean active;
 
-    private Sports() {
+    private Sport() {
     }
 
-    public Sports(String id, String name, boolean active) {
+    public Sport(String id, String name, boolean active) {
         this.id = id;
         this.name = name;
         this.active = active;
