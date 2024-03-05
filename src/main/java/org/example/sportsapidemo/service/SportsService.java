@@ -36,7 +36,14 @@ public class SportsService {
     }
 
     public Integer addSport(Request req, Response res) {
-        SPORTS.add(setSport(req));
+        String requestSportId = req.params("id");
+        Optional<Sport> existingSport = findSportById(requestSportId);
+        if (existingSport.isPresent()) {
+            res.status(400);
+            res.body("A sport with the given ID already exists");
+        } else {
+            SPORTS.add(setSport(req));
+        }
         return res.status();
     }
 
@@ -44,9 +51,8 @@ public class SportsService {
         String requestSportId = req.params("id");
         Optional<Sport> existingSport = findSportById(requestSportId);
         if (existingSport.isPresent()) {
-            Sport sport = setSport(req);
-            existingSport.get().setName(sport.getName());
-            existingSport.get().setActive(sport.isActive());
+            SPORTS.add(setSport(req));
+            SPORTS.remove(existingSport.get());
             res.status(200);
         } else {
             res.status(404);

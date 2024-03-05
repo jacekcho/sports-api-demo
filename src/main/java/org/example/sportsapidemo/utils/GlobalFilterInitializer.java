@@ -17,17 +17,16 @@ public class GlobalFilterInitializer {
     }
 
     public static void applyLogger() {
-        Filter loggerFilter = (Request request, Response response) -> {
-            logRequest(request);
-        };
+        Filter loggerFilter = GlobalFilterInitializer::logRequest;
         Spark.after(loggerFilter);
     }
 
-    private static void logRequest(Request req) {
+    private static void logRequest(Request req, Response res) {
         if (req.body().isEmpty()) {
-            log.info(String.format("\nRequest method: %s\nRequest URI: %s%s", req.requestMethod(), req.host(), req.uri()));
+            log.info(String.format("\nRequest method: %s\nRequest URI: http://%s%s", req.requestMethod(), req.host(), req.uri()));
         } else {
-            log.info(String.format("\nRequest method: %s\nRequest URI: %s%s\nBody: \n%s", req.requestMethod(), req.host(), req.uri(), req.body()));
+            log.info(String.format("\nRequest method: %s\nRequest URI: http://%s%s\nBody: \n%s", req.requestMethod(), req.host(), req.uri(), req.body()));
         }
+        log.info(String.valueOf(res.status()));
     }
 }
