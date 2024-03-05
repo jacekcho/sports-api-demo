@@ -35,10 +35,8 @@ Once the application is running, you can interact with the API using HTTP reques
 - **GET http://localhost:8080/sports**: Retrieve all sports.
 
 - **GET http://localhost:8080/sports/{id}**: Retrieve a sport by ID.<br>
-  Make sure to replace `{id}` with the actual ID of the sport when making requests.
 
-- **POST http://localhost:8080/sports/{id}**: Add a new sport.<br>
-  Make sure to replace `{id}` with the actual ID of the sport when making requests.<br>
+- **POST http://localhost:8080/sports/{id}**: Create a new sport.<br>
   Request body:
 
   ```yaml 
@@ -47,7 +45,18 @@ Once the application is running, you can interact with the API using HTTP reques
     "active": true
   }
   ```
-  
+- **PUT http://localhost:8080/sports/{id}**: Update an existing sport with the given ID.<br>
+  Request body:
+
+  ```yaml 
+  {
+    "name": "UPDATE_SPORT",
+    "active": true
+  }
+  ```
+
+Make sure to replace `{id}` with the actual ID of the sport when making requests.<br>
+
 ## Configuration
 
 The project uses a configuration file `config.properties` to manage application settings. You can configure properties such as the Spark port and the file path for default sports data.
