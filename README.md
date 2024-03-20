@@ -20,7 +20,7 @@ Unix:
 
 Windows:
 ```
-./mvnw.cmd clean install
+.\mvnw.cmd clean install
 ```
 
 3. Run the application  
