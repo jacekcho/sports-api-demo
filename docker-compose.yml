@@ -1,0 +1,12 @@
+version: '3'
+services:
+  sports-api-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: sports-api-demo-image
+    container_name: sports-api-demo
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./logs:/app/logs
