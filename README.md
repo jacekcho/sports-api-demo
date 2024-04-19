@@ -10,8 +10,12 @@ This project demonstrates a simple RESTful API for managing sports data.
 
 To run the project, you can follow these steps:
 
-1. Clone the repository to your local machine.
-2. Build the project using Maven.
+- Clone or download the repository to your local machine
+- Navigate to the project directory
+
+### Option 1: Run Locally with Maven Wrapper
+
+Build the project using Maven Wrapper:
 
 Unix:
 ```
@@ -23,10 +27,19 @@ Windows:
 .\mvnw.cmd clean install
 ```
 
-3. Run the application  
+Run the application
 ```
 java -jar target/sports-api-demo-0.0.1.jar
 ```
+
+### Option 2: Run with Docker Compose
+
+Start the service using Docker Compose:
+   ```
+   docker-compose up
+   ```
+
+This will build the Docker image and start the service in a Docker container.
 
 ## Usage
 
