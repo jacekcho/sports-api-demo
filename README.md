@@ -4,7 +4,7 @@ This project demonstrates a simple RESTful API for managing sports data.
 
 ## Requirements
 
-- Java 17
+- Java 21
 
 ## Getting Started
 
