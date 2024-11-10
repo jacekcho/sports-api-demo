@@ -1,5 +1,6 @@
 .idea/
 target/
+sports-api-demo.iml
 
 # Exclude maven wrapper
 .mvn/wrapper/maven-wrapper.jar

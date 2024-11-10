@@ -73,5 +73,155 @@
         "name": "Rugby League World Cup"
       }
     ]
+  },
+  {
+    "id": "6",
+    "name": "Tennis",
+    "active": true,
+    "competitions": [
+      {
+        "id": "C_11",
+        "name": "Wimbledon"
+      },
+      {
+        "id": "C_12",
+        "name": "US Open"
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "name": "Golf",
+    "active": true,
+    "competitions": [
+      {
+        "id": "C_13",
+        "name": "The Masters"
+      },
+      {
+        "id": "C_14",
+        "name": "PGA Championship"
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "name": "Cricket",
+    "active": true,
+    "competitions": [
+      {
+        "id": "C_15",
+        "name": "ICC World Cup"
+      },
+      {
+        "id": "C_16",
+        "name": "Ashes Series"
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "name": "Baseball",
+    "active": true,
+    "competitions": [
+      {
+        "id": "C_17",
+        "name": "MLB World Series"
+      },
+      {
+        "id": "C_18",
+        "name": "Nippon Professional Baseball"
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "name": "Ice Hockey",
+    "active": true,
+    "competitions": [
+      {
+        "id": "C_19",
+        "name": "NHL Stanley Cup"
+      },
+      {
+        "id": "C_20",
+        "name": "IIHF World Championship"
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "name": "Formula 1",
+    "active": true,
+    "competitions": [
+      {
+        "id": "C_21",
+        "name": "Monaco Grand Prix"
+      },
+      {
+        "id": "C_22",
+        "name": "British Grand Prix"
+      }
+    ]
+  },
+  {
+    "id": "12",
+    "name": "Volleyball",
+    "active": true,
+    "competitions": [
+      {
+        "id": "C_23",
+        "name": "FIVB World Championship"
+      },
+      {
+        "id": "C_24",
+        "name": "Olympic Games"
+      }
+    ]
+  },
+  {
+    "id": "13",
+    "name": "Badminton",
+    "active": false,
+    "competitions": [
+      {
+        "id": "C_25",
+        "name": "All England Open"
+      },
+      {
+        "id": "C_26",
+        "name": "BWF World Championships"
+      }
+    ]
+  },
+  {
+    "id": "14",
+    "name": "Athletics",
+    "active": true,
+    "competitions": [
+      {
+        "id": "C_27",
+        "name": "Diamond League"
+      },
+      {
+        "id": "C_28",
+        "name": "Olympic Games"
+      }
+    ]
+  },
+  {
+    "id": "15",
+    "name": "Cycling",
+    "active": true,
+    "competitions": [
+      {
+        "id": "C_29",
+        "name": "Tour de France"
+      },
+      {
+        "id": "C_30",
+        "name": "Giro d'Italia"
+      }
+    ]
   }
 ]
